@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackMarket - Wiki</title>
-    <link href="css/styles.css", rel="stylesheet">
-    <link href="css/content-page.css", rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="/css/content-page.css?v=<?php echo time(); ?>" />
     <link rel="icon" href="images/bm_icon.png">
     <script type="text/javascript" src="js/spoiler.js"></script>
 </head>
