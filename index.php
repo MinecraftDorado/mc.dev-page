@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlackMarket - Wiki</title>
-    <link rel="stylesheet" href="/css/styles.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>" />
     <link rel="icon" href="images/bm_icon.png">
+    <script type="text/javascript" src="js/navbar.js"></script>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-disable" id="navbar">
         <ul class="navbar-nav">
-            <li class="logo"><a class="nav-link"><img src="images/menu.png" class="navbar-icon"></a></li>
+            <li class="logo"><a class="nav-link"><img src="images/menu.png" class="navbar-icon" onclick="showMenu()"></a></li>
             <li class="nav-item"><a class="nav-link" href="https://github.com/MinecraftDorado" target="_blank">GitHub</img></a></li>
             <li class="nav-item"><a class="nav-link"  href="https://discord.gg/gBd9SYUHba" target="_blank">Support</a></li>
             <li class="nav-item"><a class="nav-link" href="https://paypal.me/minecraftdorado?locale.x=es_XC" target="_blank">Donate</a></li>

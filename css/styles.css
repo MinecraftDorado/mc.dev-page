@@ -152,24 +152,26 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 600px){
 
-    .navbar {
+    .navbar.navbar-disable {
         width: 75px;
         padding: 10px 0 10px 0;
         background-color: none;
         position: fixed;
     }
     
-    .navbar:hover {
+    .navbar.navbar-active {
         width: 100vw;
         background-color: #dfdfdf;
+        padding: 10px 0 10px 0;
+        position: fixed;
     }
 
-    .navbar:hover .navbar-icon {
+    .navbar.navbar-active .navbar-icon{
         transform: rotate(180deg);
         transition: 1500ms;
     }
 
-    .navbar-icon {
+    .navbar.navbar-disable .navbar-icon {
         transform: rotate(-180deg);
         transition: 1500ms;
     }
