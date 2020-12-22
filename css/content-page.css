@@ -14,10 +14,6 @@
     display: block;
 }
 
-.content img {
-    width: 100%;
-}
-
 .content h2 {
     color: white;
     font: normal normal normal 28px/35px "title",cursive;
@@ -45,6 +41,12 @@
     display: grid;
     padding: 0 15px;
     margin: 15px 0;
+}
+
+.content p i {
+    padding: 0;
+    margin: 0;
+    display: inline;
 }
 
 #date {
@@ -75,6 +77,16 @@ code {
     margin: 15px 15px;
 }
 
+.content p code {
+    margin: 0;
+}
+
+.content p code i {
+    color: black;
+    font: inherit;
+    font-style: italic;
+}
+
 .spoiler {
     background-color: #D9D9D9;
     color: #535353;
@@ -95,6 +107,10 @@ code {
         border-right: none;
         padding: 0 5px 15px;
     }
+
+    .content img {
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 600px){
@@ -104,5 +120,9 @@ code {
         margin: 20px 15px;
         border: 1px #b4b4b4 solid;
         padding: 0 75px 15px;
+    }
+
+    .content img {
+        width: 45%;
     }
 }

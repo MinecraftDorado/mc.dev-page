@@ -90,6 +90,10 @@ body::-webkit-scrollbar {
     overflow: hidden;
 }
 
+.col_border a {
+    font-size: 0;
+}
+
 .col_center {
     float: left;
     display: grid;
