@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("/img/background.jpg");
     /*background-repeat: no-repeat;
     background-size: 100%;*/
     background-attachment: fixed;
@@ -134,24 +134,24 @@ body::-webkit-scrollbar {
 
 @font-face{
     font-family: "desc";
-    src: url("../fonts/opensans-regular-webfont.woff");
+    src: url("/fonts/opensans-regular-webfont.woff");
 }
 
 @font-face{
     font-family: "desc italic";
-    src: url("../fonts/opensans-italic-webfont.woff");
+    src: url("/fonts/opensans-italic-webfont.woff");
     font-style: italic;
 }
 
 @font-face{
     font-family: "desc bold";
-    src: url("../fonts/opensans-bold-webfont.woff");
+    src: url("/fonts/opensans-bold-webfont.woff");
     font-style: oblique;
 }
 
 @font-face{
     font-family: "title";
-    src: url("../fonts/TUZyzwprpvBS1izr_vOECuSf.woff2");
+    src: url("/fonts/TUZyzwprpvBS1izr_vOECuSf.woff2");
 }
 
 @media only screen and (max-width: 600px){
