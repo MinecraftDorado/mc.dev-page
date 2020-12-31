@@ -10,6 +10,11 @@
     display: inline-block;
 }
 
+.col_center #edit {
+    float: right;
+    margin: 15px 25px 0 0;
+}
+
 .content {
     display: block;
 }

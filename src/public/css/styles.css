@@ -132,6 +132,25 @@ body::-webkit-scrollbar {
     color: #82ecb2;
 }
 
+.content .settings {
+    display: inline;
+    float: right;
+    bottom: 5px;
+    position: relative;
+}
+
+.content .settings form {
+    display: inherit;
+    float: inherit;
+    margin-left: 5px;
+    bottom: inherit;
+}
+
+.content .settings form button {
+    background-color: #82ecb2;
+    bottom: inherit;
+}
+
 @font-face{
     font-family: "desc";
     src: url("/fonts/opensans-regular-webfont.woff");
@@ -210,6 +229,10 @@ body::-webkit-scrollbar {
     .content p {
         padding: 15px 35px 20px 25px;
     }
+
+    .content .content-desc {
+        padding: 15px 35px 0 25px;
+    }
 }
 
 @media only screen and (min-width: 600px){
@@ -254,5 +277,9 @@ body::-webkit-scrollbar {
     
     .content p {
         padding: 15px 35px 0px 0px;
+    }
+
+    .content .content-desc {
+        padding: 15px 35px 0 0;
     }
 }

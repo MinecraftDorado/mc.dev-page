@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('.././partials/head.html') %>
+
+    <link rel="stylesheet" href="/css/content-page.css?v=<?php echo time(); ?>" />
+    
+    <link rel="icon" href="/img/bm_icon.png">
+    <script type="text/javascript" src="/js/spoiler.js"></script>
+    <title><%- article.title %></title>
+</head>
+<body>
+
+    <%- include('.././partials/navigation.html') %>
+    <%- include('.././partials/title.html') %>
+
+    <div class="col_border"><a>.</a></div>
+    <div class="col_center">
+        <a href="/">« All posts</a>
+        <a href="/updates/edit/<%= article.id %>" id="edit">Edit</a>
+        <div class="content">
+            <a id="date"><%= article.createdAt.toLocaleDateString() %></a>
+            
+            <h2><%- article.title %></h2>
+
+            <div>
+            <%- article.sanitizedHtml %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
