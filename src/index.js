@@ -8,7 +8,7 @@ const Article = require('./models/article')
 const articleRouter = require('./routes/index')
 const methodOverride = require('method-override')
 
-mongoose.connect('mongodb://localhost/blog', {
+mongoose.connect('mongodb://localhost/updates', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
@@ -36,3 +36,6 @@ app.use('/updates', articleRouter)
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'))
 })
+
+// favicon
+app.use('/favicon.ico', express.static('img/favicon.ico'));
