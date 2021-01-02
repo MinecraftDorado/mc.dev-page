@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head.html') %>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%=title%></title>
+</head>
+<body>
+
+    <%- include('partials/navigation.html') %>
+    <%- include('partials/title.html') %>
+
+    <div class="col_border"><a>.</a></div>
+    <div class="col_center">
+
+        <a style="color: red;" href="/update/new" class="btn btn-success">New Article</a>
+
+        <% articles.forEach(article => { %>
+            <div class="content">
+                <img src="img/img.png" alt="img">
+                <div class="content-info">
+                    <h2><%= article.title %></h2>
+                    <a class="content-desc" href="update/<%= article.slug %>"><%= article.description %></a>
+                    <p><%= article.createdAt.toLocaleDateString() %></p>
+                    <div class='settings'>
+                        <a href="update/edit/<%= article.id %>">Edit</a>
+                        <form action="/update/<%= article.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+
+        <h1> Sign up form </h1> 
+  
+        <form action="/register" method="POST"> 
+            <input type="text" name="username" 
+                placeholder="username"> 
+            <input type="password" name="password" 
+                placeholder="password"> 
+            <button>Submit</button> 
+        </form> 
+
+        <form action="/login" method="POST"> 
+            <input type="text" name="username"
+                placeholder="username"> 
+            <input type="password" name="password" 
+                placeholder="password"> 
+            <button>login</button> 
+        </form>
+        <li><a href="/logout">Logout</a></li> 
+    </div>
+</body>
+</html>

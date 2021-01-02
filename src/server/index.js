@@ -12,12 +12,15 @@ mongoose.connect('mongodb://localhost/updates', {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 })
 
+var bodyParser = require("body-parser")
+
 // settings
 app.set('port', 3000) // Define una variable que se puede obtener desde otro archivo
 app.set('views', path.join(__dirname, 'views'))
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: false }))
+//app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(methodOverride('_method'))
 
 // routes
@@ -28,7 +31,7 @@ app.get('/', async (req, res) => {
   res.render('index', { title:'BlackMarket', articles: articles })
 })
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '../public')))
 
 app.use('/updates', articleRouter)
 
@@ -39,3 +42,33 @@ app.listen(app.get('port'), () => {
 
 // favicon
 app.use('/favicon.ico', express.static('img/favicon.ico'));
+
+
+
+
+var passport = require("passport"),
+    LocalStrategy = require("passport-local"), 
+    passportLocalMongoose = require("passport-local-mongoose"), 
+    User = require("./models/user"); 
+  
+app.use(require("express-session")({ 
+    secret: "Rusty is a dog", 
+    resave: false, 
+    saveUninitialized: false
+})); 
+  
+app.use(passport.initialize()); 
+app.use(passport.session()); 
+
+passport.use(new LocalStrategy(User.authenticate())); 
+passport.serializeUser(User.serializeUser()); 
+passport.deserializeUser(User.deserializeUser()); 
+  
+//===================== 
+// ROUTES 
+//===================== 
+
+app.use(require('./routes/user/login'))
+app.use(require('./routes/user/secret'))
+app.use(require('./routes/user/register'))
+app.use(require('./routes/user/logout'))
