@@ -103,6 +103,7 @@ body::-webkit-scrollbar {
     display: block;
     border: 1px #b4b4b4 solid;
     color: white;
+    position: relative;
 }
 
 .content img {
@@ -135,8 +136,9 @@ body::-webkit-scrollbar {
 .content .settings {
     display: inline;
     float: right;
-    bottom: 5px;
-    position: relative;
+    bottom: 15px;
+    right: 15px;
+    position: absolute;
 }
 
 .content .settings form {
