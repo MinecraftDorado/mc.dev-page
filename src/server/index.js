@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
 
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.use('/updates', articleRouter)
+app.use('/update', articleRouter)
 
 // listening the server
 app.listen(app.get('port'), () => {
