@@ -17,14 +17,6 @@
     height: 100%;
 }
 
-.nav-item {
-    width: 100vw;
-}
-
-.nav-item:last-child {
-    margin-right: auto;
-}
-
 .nav-link {
     padding: 0 8px;
     color: black;
@@ -73,6 +65,10 @@
         transform: rotate(-180deg);
         transition: 1500ms;
     }
+
+    .navbar-nav {
+        justify-content: flex-start;
+    }
 }
 
 @media only screen and (min-width: 600px){
@@ -88,8 +84,20 @@
     .logo {
         display: none;
     }
-    
-    .nav-link {
+
+    .navbar-nav {
         justify-content: center;
+        align-content: center;
+    }
+
+    .nav-item:nth-child(2) {
+        align-items: center;
+        margin-left: auto;
+        padding-left: 58px; /* menu.png size*/
+    }
+
+    .nav-item:nth-child(5) {
+        align-items: flex-end;
+        margin-left: auto
     }
 }
