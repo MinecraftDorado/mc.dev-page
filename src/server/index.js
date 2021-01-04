@@ -28,7 +28,7 @@ app.use(require('./routes/index'))
 
 app.get('/', async (req, res) => {
   const articles = await Article.find().sort({ createdAt: 'desc' })
-  res.render('index', { title:'BlackMarket', articles: articles })
+  res.render('index', { title:'BlackMarket', articles: articles})
 })
 
 app.use(express.static(path.join(__dirname, '../public')))
@@ -49,7 +49,7 @@ app.use('/favicon.ico', express.static('img/favicon.ico'));
 var passport = require("passport"),
     LocalStrategy = require("passport-local"), 
     passportLocalMongoose = require("passport-local-mongoose"), 
-    User = require("./models/user"); 
+    User = require("./models/user");
   
 app.use(require("express-session")({ 
     secret: "Rusty is a dog", 

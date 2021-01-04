@@ -1,12 +1,30 @@
-<nav class="navbar navbar-disable" id="navbar">
-    <ul class="navbar-nav">
-        <li class="logo"><a class="nav-link"><img src="/img/menu.png" class="navbar-icon" onclick="showMenu()"></a></li>
-        <li class="nav-item"><a class="nav-link" href="https://github.com/MinecraftDorado" target="_blank">GitHub</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://discord.gg/gBd9SYUHba" target="_blank">Support</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://paypal.me/minecraftdorado?locale.x=es_XC" target="_blank">Donate</a></li>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+<link rel="stylesheet" href="/css/navbar.css">
+
+<nav>
+    <ul>
+        <li class="logo">MinecraftDorado</li>
+        <li class="items"><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
+        
+        <li class="items" id="social"><a><i class="fa fa-fw fa-envelope"></i> Social</a>
+            <ul>
+                <li><a href="https://github.com/MinecraftDorado" target="_blank">GitHub</a></li>
+                <li><a href="https://discord.gg/gBd9SYUHba" target="_blank">Discord</a></li>
+                <li><a href="https://paypal.me/minecraftdorado?locale.x=es_XC" target="_blank">Donate</a></li>
+            </ul>
+        </li>
+        <li class="items"><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+        <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
     </ul>
 </nav>
-
-<script type="text/javascript" src="/js/navbar.js"></script>
+<script>
+    
+    $(document).ready(function () {
+        $('.btn').click(function () {
+            $('.items').toggleClass("show");
+            $('ul li').toggleClass("hide");
+        });
+    });
+</script>

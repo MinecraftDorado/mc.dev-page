@@ -1,15 +1,38 @@
-<h1> Sign up form </h1> 
-  
-<form action="/register" method="POST"> 
-    <input type="text" name="username" 
-        placeholder="username"> 
-    <input type="password" name="password" 
-        placeholder="password"> 
-    <button>Submit</button> 
-</form> 
-  
-<h1>This is home page</h1> 
-  
-<li><a href="/register">Sign up!!</a></li> 
-<li><a href="/login">Login</a></li> 
-<li><a href="/logout">Logout</a></li> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/head.html') %>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/login-register.css">
+</head>
+<body>
+
+    <%- include('../partials/navigation.html') %>
+    
+    <div class="container col-3 form">
+        <h3>Register form</h3>
+        <form action="/register" method="POST"> 
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Username *" name="username" />
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Your Password *" name="password" />
+            </div>
+            <div class="form-group" style="display: inline-flexbox;">
+                <input type="submit" class="btnSubmit" value="Register" />
+                <a href="/login"><input type="button" class="btnSubmit" value="Login"/></a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var error = <%- JSON.stringify(register_error) %>
+        if(error != null){
+            alert(error)
+        }
+    </script>
+</body>
+</html>

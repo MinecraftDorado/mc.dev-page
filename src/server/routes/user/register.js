@@ -1,9 +1,11 @@
 const express = require('express')
 const router = express.Router()
+var passport = require("passport")
+var User = require("../.././models/user");
 
 // Showing register form 
 router.get("/register", function (req, res) { 
-    res.render("user/register"); 
+    res.render("user/register", {register_error: null}); 
 }); 
   
 // Handling user signup 
@@ -13,8 +15,8 @@ router.post("/register", function (req, res) {
     User.register(new User({ username: username }), 
             password, function (err, user) { 
         if (err) { 
-            console.log(err); 
-            return res.render("user/register");  
+            console.log(err);
+            return res.render("user/register", {register_error: String(err)});
         } 
   
         passport.authenticate("local")( 

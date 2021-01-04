@@ -1,0 +1,39 @@
+.form {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    border-radius: 10px;
+    padding: 2% 20px 5% 20px;
+}
+
+.form h3 {
+    text-align: center;
+    color: #333;
+    padding-bottom: 40px;
+}
+
+.btnSubmit {
+    width: 49%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+
+.form .btnSubmit {
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form .ForgetPwd {
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-group {
+    padding-bottom: 10px;
+}
