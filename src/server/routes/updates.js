@@ -14,10 +14,10 @@ module.exports = (app) => {
     app.get('/update/:slug', async (req, res) => {
         const update = await Update.findOne({ slug: req.params.slug })
         if (update == null) res.redirect('/')
-        else res.render('updates/content', {update: update })
+        else res.render('updates/content', {update: update, user: req.user })
     })
 
-    app.post('/', async (req, res, next) => {
+    app.post('/update', async (req, res, next) => {
         req.update = new Update()
         next()
     }, saveUpdateAndRedirect('new'))
