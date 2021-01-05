@@ -1,40 +1,21 @@
-var mongoose=require("mongoose");
-var passportlocalmongoose=require("passport-local-mongoose");
+const mongoose = require('./mongoose')
 
-let rolesValidos = {
-  values: ["ADMIN", "USER"],
-  message: '{VALUE} rol invalid'
-}
+const bcrypt = require('bcrypt-nodejs')
+const passport = require('passport')
 
-var UserSchema = mongoose.Schema({
-  username: {
-    type: String,
-    required: [true, 'Username needed']
-  },
-  password: {
-    type: String
-  },
-  email: {
-    type: String
-  },
-  registerAt: {
-    type: Date,
-    default: Date.now
-  },
-  role: {
-    type: String,
-    default: 'USER',
-    required: [true],
-    enum: rolesValidos
-  }
+const userSchema = new mongoose.Schema({
+    local: {
+        username: String,
+        password: String
+    }
 })
 
-UserSchema.methods.toJSON = function() {
-  let user = this;
-  let userObject = user.toObject();
-  delete userObject.password;
-  return userObject;
+userSchema.methods.generateHash = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null)
 }
 
-UserSchema.plugin(passportlocalmongoose);
-module.exports = mongoose.model("User", UserSchema);
+userSchema.methods.validatePassword = function (password) {
+    return bcrypt.compareSync(password, this.local.password)
+}
+
+module.exports = mongoose.register.model('User', userSchema)

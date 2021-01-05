@@ -1,11 +1,12 @@
-const mongoose = require('mongoose')
+const mongoose = require('./mongoose')
+
 const marked = require('marked')
 const slugify = require('slugify')
 const createDomPurify = require('dompurify')
 const { JSDOM } = require('jsdom')
 const dompurify = createDomPurify(new JSDOM().window)
 
-const articleSchema = new mongoose.Schema({
+const updateSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -32,7 +33,7 @@ const articleSchema = new mongoose.Schema({
   }
 })
 
-articleSchema.pre('validate', function(next) {
+updateSchema.pre('validate', function(next) {
   if (this.title) {
     this.slug = slugify(this.title, { lower: true, strict: true })
   }
@@ -44,4 +45,4 @@ articleSchema.pre('validate', function(next) {
   next()
 })
 
-module.exports = mongoose.model('Article', articleSchema)
+module.exports = mongoose.updates.model('Update', updateSchema)

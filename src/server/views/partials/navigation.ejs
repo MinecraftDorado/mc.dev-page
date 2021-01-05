@@ -8,14 +8,27 @@
         <li class="logo">MinecraftDorado</li>
         <li class="items"><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
         
-        <li class="items" id="social"><a><i class="fa fa-fw fa-envelope"></i> Social</a>
+        <li class="items list"><a><i class="fa fa-fw fa-envelope"></i> Social</a>
             <ul>
                 <li><a href="https://github.com/MinecraftDorado" target="_blank">GitHub</a></li>
                 <li><a href="https://discord.gg/gBd9SYUHba" target="_blank">Discord</a></li>
                 <li><a href="https://paypal.me/minecraftdorado?locale.x=es_XC" target="_blank">Donate</a></li>
             </ul>
         </li>
-        <li class="items"><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+        
+        <% if(user != null) { %>
+
+            <li class="items list"><a><i class="fa fa-fw fa-user"></i> <%= user.local.username %></a>
+                <ul>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </li>
+
+        <% } else { %>
+            <li class="items"><a href="/login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+        <% } %>
+
         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
     </ul>
 </nav>

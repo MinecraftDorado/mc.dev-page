@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    
+    <%- include('../partials/head.ejs') %>
+    
+    <link rel="stylesheet" href="/css/login-register.css">
+</head>
+<body>
+
+    <%- include('../partials/navigation.ejs') %>
+
+    <div class="container">
+        <header class="text-center">
+            <h1>Profile</h1>
+            <a href="/logout" class="btn btn-light btn-sm">logout</a>
+        </header>
+
+        <hr>
+
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title"><span class="fa fa-user">Local</span></h3>
+
+                        <p>
+                            <strong>id</strong>: <%= user.id %> </br>
+                            <strong>username</strong>: <%= user.local.username %> </br>
+                            <strong>password</strong>: <%= user.local.password %> </br>
+                        </p>
+                        <a href="/logout" class="btn btn-light">logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

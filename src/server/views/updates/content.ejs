@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include('.././partials/head.html') %>
+    <%- include('.././partials/head.ejs') %>
 
     <link rel="stylesheet" href="/css/content-page.css?v=<?php echo time(); ?>" />
     
     <script type="text/javascript" src="/js/spoiler.js"></script>
-    <title><%- article.title %></title>
+    <title><%- update.title %></title>
 </head>
 <body>
 
-    <%- include('.././partials/navigation.html') %>
-    <%- include('.././partials/title.html') %>
+    <%- include('.././partials/navigation.ejs') %>
+    <%- include('.././partials/header.ejs') %>
 
     <div class="col_border"><a>.</a></div>
     <div class="col_center">
         <a href="/">« All posts</a>
-        <a href="/update/edit/<%= article.id %>" id="edit">Edit</a>
+        <a href="/update/edit/<%= update.id %>" id="edit">Edit</a>
         <div class="content">
-            <a id="date"><%= article.createdAt.toLocaleDateString() %></a>
+            <a id="date"><%= update.createdAt.toLocaleDateString() %></a>
             
-            <h2><%- article.title %></h2>
+            <h2><%- update.title %></h2>
 
             <div>
-            <%- article.sanitizedHtml %>
+            <%- update.sanitizedHtml %>
             </div>
         </div>
     </div>
