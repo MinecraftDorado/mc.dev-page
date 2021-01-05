@@ -1,136 +1,143 @@
 nav{
-    background: #dfdfdf;
-    padding: 0px 60px;
-  }
+  background: #dfdfdf;
+  padding: 0px 60px;
+}
   
-  nav ul{
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+
+nav ul li.items:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: #1c67c9;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+nav ul li.items:hover:after{
+  opacity: 1;
+  bottom: 8px;
+}
+
+nav ul li.logo{
+  flex: 2;
+  color: black;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+nav ul li a{
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  transition: .4s;
+}
+nav ul li:hover a, #social:hover > a{
+  color: #1c67c9;
+}
+nav ul li.btn{
+  display: none;
+}
+nav ul li.btn.hide i:before{
+  content: '\f00d';
+}
+
+/*
+    List
+*/
+
+nav ul ul{
+  position: absolute;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #dfdfdf;
+  transition: .3s linear;
+  padding: 0;
+}
+nav ul li:hover > ul{
+  top: 60px;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s linear;
+}
+nav ul ul li{
+  width: 150px;
+  display: list-item;
+  position: relative;
+}
+nav .list li:hover {
+  background-color: #ddd6d6;
+}
+nav .list li:hover a{
+  color: #1c67c9;
+}
+nav .list li > a{
+  color: black;
+}
+nav .list .btn {
+  color: black
+}
+nav .list .btn:hover {
+  color: #3187f7
+}
+
+
+/*
+  Responsive
+*/
+
+@media all and (max-width: 900px){
+  nav{
+    padding: 0 30px;
   }
-  
-  nav ul li{
-    padding: 15px 0;
-    cursor: pointer;
+  nav ul {
+      padding: 0;
+      margin: 0;
   }
-  
   nav ul li.items{
-    position: relative;
-    width: auto;
-    margin: 0 16px;
-    text-align: center;
-    order: 3;
-  }
-  
-  nav ul li.items:after{
-    position: absolute;
-    content: '';
-    left: 0;
-    bottom: 5px;
-    height: 2px;
     width: 100%;
-    background: #1c67c9;
-    opacity: 0;
-    transition: all 0.2s linear;
-  }
-  
-  nav ul li.items:hover:after{
-    opacity: 1;
-    bottom: 8px;
-  }
-  
-  nav ul li.logo{
-    flex: 2;
-    color: black;
-    font-size: 23px;
-    font-weight: 600;
-    cursor: default;
-    user-select: none;
-  }
-  nav ul li a{
-    color: black;
-    font-size: 18px;
-    text-decoration: none;
-    transition: .4s;
-  }
-  nav ul li:hover a, #social:hover > a{
-    color: #1c67c9;
-  }
-  nav ul li.btn{
     display: none;
   }
-  nav ul li.btn.hide i:before{
-    content: '\f00d';
+  nav ul li.items.show{
+    display: block;
   }
-  
-  /*
-      List
-  */
-  
-  nav ul ul{
-      position: absolute;
-      top: 85px;
-      opacity: 0;
-      visibility: hidden;
-      background-color: #dfdfdf;
-      transition: .3s linear;
-      padding: 0;
+  nav ul li.btn{
+    display: block;
+  }
+  nav ul li.items:hover{
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #b3b0b0,
+                inset 0 0 10px #a1a1a1;
+  }
+  nav ul li.items:hover:after{
+    opacity: 0;
   }
   nav ul li:hover > ul{
-      top: 60px;
-      opacity: 1;
-      visibility: visible;
-      transition: .3s linear;
+      z-index: 100;
+      width: inherit;
   }
-  nav ul ul li{
-      width: 150px;
-      display: list-item;
-      position: relative;
-  }
-  #social li:hover {
-      background-color: #ddd6d6;
-  }
-  #social li:hover a{
-      color: #1c67c9;
-  }
-  #social li > a{
-      color: black;
-  }
-  
-  /*
-      Responsive
-  */
-  
-  @media all and (max-width: 900px){
-      nav{
-        padding: 0 30px;
-      }
-      nav ul {
-          padding: 0;
-          margin: 0;
-      }
-      nav ul li.items{
-        width: 100%;
-        display: none;
-      }
-      nav ul li.items.show{
-        display: block;
-      }
-      nav ul li.btn{
-        display: block;
-      }
-      nav ul li.items:hover{
-        border-radius: 5px;
-        box-shadow: inset 0 0 5px #b3b0b0,
-                    inset 0 0 10px #a1a1a1;
-      }
-      nav ul li.items:hover:after{
-        opacity: 0;
-      }
-      nav ul li:hover > ul{
-          z-index: 100;
-          width: inherit;
-      }
-  }
+}
