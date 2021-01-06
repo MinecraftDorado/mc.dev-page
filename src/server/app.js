@@ -57,12 +57,6 @@ app.use(express.static(path.join(__dirname, '.././public')))
 
 
 //=====================
-// FAVICON
-//=====================
-
-app.use('/favicon.ico', express.static('img/favicon.ico'));
-
-//=====================
 // SERVER
 //=====================
 
