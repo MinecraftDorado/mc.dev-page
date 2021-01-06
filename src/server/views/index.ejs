@@ -24,12 +24,15 @@
                     <h2><%= update.title %></h2>
                     <a class="content-desc" href="update/<%= update.slug %>"><%= update.description %></a>
                     <p><%= update.createdAt.toLocaleDateString() %></p>
-                    <div class='settings'>
-                        <a href="update/edit/<%= update.id %>">Edit</a>
-                        <form action="/update/<%= update.id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete</button>
-                        </form>
-                    </div>
+
+                    <% if(user != null && user.role == 'ADMIN') { %> 
+                        <div class='settings'>
+                            <a href="update/edit/<%= update.id %>">Edit</a>
+                            <form action="/update/<%= update.id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    <% } %> 
                 </div>
             </div>
         <% }) %>

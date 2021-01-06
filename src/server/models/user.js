@@ -3,10 +3,21 @@ const mongoose = require('./mongoose')
 const bcrypt = require('bcrypt-nodejs')
 const passport = require('passport')
 
+let roles = {
+    values: ["ADMIN", "USER"],
+    message: '{VALUE} rol invalid'
+}
+
 const userSchema = new mongoose.Schema({
     local: {
         username: String,
         password: String
+    },
+    role: {
+        type: String,
+        default: 'USER',
+        required: [true],
+        enum: roles
     }
 })
 

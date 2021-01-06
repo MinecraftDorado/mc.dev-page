@@ -3,12 +3,21 @@ module.exports = (app) => {
     const Update = require('./../models/update')
 
     app.get('/update/new', (req, res) => {
-        res.render('updates/new', { update: new Update() })
+        if(req.isAuthenticated() && req.user.role == 'ADMIN'){
+            res.render('updates/new', { update: new Update() })
+        }else{
+            res.redirect('/')
+        }
     })
 
     app.get('/update/edit/:id', async (req, res) => {
         const update = await Update.findById(req.params.id)
-        res.render('updates/edit', { update: update })
+
+        if(req.isAuthenticated() && req.user.role == 'ADMIN'){
+            res.render('updates/edit', { update: update })
+        }else{
+            res.redirect('/update/' + update.slug)
+        }
     })
 
     app.get('/update/:slug', async (req, res) => {
@@ -28,7 +37,9 @@ module.exports = (app) => {
     }, saveUpdateAndRedirect('edit'))
     
     app.delete('/update/:id', async (req, res) => {
-        await Update.findByIdAndDelete(req.params.id)
+        if(req.isAuthenticated() && req.user.role == 'ADMIN'){
+            await Update.findByIdAndDelete(req.params.id)
+        }
         res.redirect('/')
     })
 

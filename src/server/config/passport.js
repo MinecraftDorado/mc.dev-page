@@ -4,11 +4,15 @@ const User = require('../models/user')
 
 module.exports = function (passport) {
     
+    const {admin} = require('./secret')
+
     passport.serializeUser(function (user, done) {
+        console.log('Serialize user called.');
         done(null, user.id)
     })
 
     passport.deserializeUser(function (id, done){
+        console.log('Deserialize user called.');
         User.findById(id, function (err, user) {
             done(err, user)
         })
@@ -48,17 +52,26 @@ module.exports = function (passport) {
     },
     
     function (req, username, password, done) {
-        User.findOne({'local.username': username}, function (err, user) {
-            if(err) {return done(err)}
-            if(!user) {
-                return done(null, false, req.flash('loginMessage', 'This username not exist'))
-            }
-            if(!user.validatePassword(password)){
-                return done(null, false, req.flash('loginMessage', 'Wrong password'))
-            }
-            return done(null, user)
+
+        process.nextTick(function () {
+            User.findOne({ 'local.username': username }, function (err, user) {
+                if (err) { return done(err) }
+                if (!user) {
+                    return done(null, false, req.flash('loginMessage', 'This username not exist'))
+                }
+                if (!user.validatePassword(password)) {
+                    return done(null, false, req.flash('loginMessage', 'Wrong password'))
+                }
+                // needs to be modified
+                if (username == admin.username && user.validatePassword(admin.password) && user.role != 'ADMIN') {
+                    user.role = 'ADMIN'
+                    user.save(function (err) {
+                        if (err) { throw err }
+                    })
+                }
+                return done(null, user)
+            })
         })
     }
-
     ))
 }
