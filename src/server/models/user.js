@@ -1,9 +1,15 @@
+
 const mongoose = require('./mongoose')
 
 const bcrypt = require('bcrypt-nodejs')
 const passport = require('passport')
 
-let roles = {
+const roles_type = {
+    ADMIN: "admin",
+    USER: "user"
+}
+
+const roles = {
     values: ["ADMIN", "USER"],
     message: '{VALUE} rol invalid'
 }
@@ -18,6 +24,10 @@ const userSchema = new mongoose.Schema({
         default: 'USER',
         required: [true],
         enum: roles
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 })
 
@@ -28,5 +38,7 @@ userSchema.methods.generateHash = function (password) {
 userSchema.methods.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.local.password)
 }
-
-module.exports = mongoose.register.model('User', userSchema)
+module.exports = {
+    User: mongoose.register.model('User', userSchema),
+    roles: roles_type
+}

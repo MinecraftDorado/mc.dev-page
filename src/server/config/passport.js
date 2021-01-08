@@ -1,6 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy
 
-const User = require('../models/user')
+const {User} = require('../models/user')
 
 module.exports = function (passport) {
     
@@ -54,6 +54,16 @@ module.exports = function (passport) {
     function (req, username, password, done) {
 
         process.nextTick(function () {
+            
+                    /*if(username == admin.username && password == admin.password){
+                        var user = new User()
+                        user.local.username = username
+                        user.local.password = user.generateHash(password)
+                        user.role = 'ADMIN'
+            
+                        return done(null, user, req.flash('loginMessage', 'IDK'))
+                    }*/
+
             User.findOne({ 'local.username': username }, function (err, user) {
                 if (err) { return done(err) }
                 if (!user) {

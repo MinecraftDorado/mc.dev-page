@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <%- include('../partials/head.ejs') %>
+
+        <link rel="stylesheet" href="/css/login-register.css">
+</head>
+
+<body>
+
+    <%- include('../partials/navigation.ejs') %>
+
+    <div class="container">
+        <div class="container col-10 col-md-6">
+            <% users.forEach(u=> { %>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title"><span class="fa fa-user">Local</span></h3>
+    
+                        <p>
+                            <strong>id</strong>: <%= u.id %> </br>
+                                <strong>username</strong>: <%= u.local.username %> </br>
+                                    <% if(user !=null && user.role=='ADMIN' ) { %> <strong>password</strong>: <%=
+                                            u.local.password %> </br>
+                                            <% } %>
+                                                <strong>rol</strong>: <%= u.role %> </br>
+                        </p>
+    
+                        <% if(user !=null && user.role=='ADMIN' ) { %>
+                            <form action="/members/rank/<%= u.id %>" method="POST">
+                                <select id="rol" name="rol">
+    
+                                    <% Object.entries(roles).forEach(entry=> { const [key, value] = entry; %>
+    
+                                        <option value=<%=key %> ><%= key %>
+                                        </option>
+    
+                                        <% }) %>
+                                </select>
+    
+                                <button type="submit">Update</button>
+                            </form>
+                            <% } %>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+</body>
+</html>

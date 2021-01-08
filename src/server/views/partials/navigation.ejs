@@ -21,6 +21,7 @@
             <li class="items list"><a><i class="fa fa-fw fa-user"></i> <%= user.local.username %></a>
                 <ul>
                     <li><a href="/profile">Profile</a></li>
+                    <li><a href="/members">Members</a></li>
                     <li><a href="/logout">Logout</a></li>
                     <% if(user.role == 'ADMIN') { %>
                         <li><a href="/update/new" class="btn btn-success">New Article</a></li>
