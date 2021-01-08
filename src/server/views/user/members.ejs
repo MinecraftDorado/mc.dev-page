@@ -31,19 +31,22 @@
                                                 <strong>rol</strong>: <%= u.role %> </br>
                         </p>
     
-                        <% if(user !=null && user.role=='ADMIN' ) { %>
+                        <% if(user !=null && user.role=='ADMIN') { %>
                             <form action="/members/rank/<%= u.id %>" method="POST">
                                 <select id="rol" name="rol">
     
-                                    <% Object.entries(roles).forEach(entry=> { const [key, value] = entry; %>
+                                    <% Object.entries(roles.values).forEach(entry=> { const [key, value] = entry; %>
     
-                                        <option value=<%=key %> ><%= key %>
+                                        <option value=<%= value %> ><%= value %>
                                         </option>
     
                                         <% }) %>
                                 </select>
     
                                 <button type="submit">Update</button>
+                            </form>
+                            <form action="/members/<%= u.id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
                             </form>
                             <% } %>
                     </div>

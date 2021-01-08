@@ -4,13 +4,8 @@ const mongoose = require('./mongoose')
 const bcrypt = require('bcrypt-nodejs')
 const passport = require('passport')
 
-const roles_type = {
-    ADMIN: "admin",
-    USER: "user"
-}
-
 const roles = {
-    values: ["ADMIN", "USER"],
+    values: ['ADMIN', 'USER'],
     message: '{VALUE} rol invalid'
 }
 
@@ -40,5 +35,5 @@ userSchema.methods.validatePassword = function (password) {
 }
 module.exports = {
     User: mongoose.register.model('User', userSchema),
-    roles: roles_type
+    roles: roles
 }
