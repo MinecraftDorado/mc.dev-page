@@ -1,3 +1,9 @@
+:root{
+    --background: #d4d3d32a;
+    --content: #ffffffda;
+    --border: 1px solid gray;
+}
+
 #profile {
     display: grid;
     grid-template-columns: 184px auto;
@@ -9,7 +15,7 @@
     padding: 15px;
     width: 1170px;
     gap: 10px;
-    background-color: blanchedalmond;
+    background-color: var(--background);
     border-radius: 5px;
 }
 
@@ -19,14 +25,9 @@
 
 #profile > #avatar {
     grid-area: avatar;
-    background-color: blue;
     min-width: 184px;
     max-width: 184px;
-}
-
-#avatar img {
-    min-width: 184px;
-    max-width: 184px;
+    border: var(--border);
 }
 
 #profile > #lore {
@@ -35,9 +36,9 @@
 
 #lore {
     padding: 15px;
-    border: 1px solid gray;
+    border: var(--border);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--content);
     word-break: break-all;
 }
 
@@ -47,17 +48,18 @@
 }
 
 #user p {
-    border: 1px solid gray;
+    border: var(--border);
     border-radius: 5px;
-    background-color: #dbdada;
+    background-color: var(--content);
     margin-bottom: 3px;
 }
 
 #profile > #activity {
     grid-area: activity;
-    border: 1px solid gray;
+    border: var(--border);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--content);
+    word-break: break-all;
 }
 
 #activity h1 {
@@ -71,13 +73,14 @@
 
 #profile > #info {
     grid-area: info;
-    text-align: center;
 }
 
 #info ul {
-    border: 1px solid gray;
+    border: var(--border);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--content);
+    list-style: none;
+    padding: 5px 10px;
 }
 
 /*
