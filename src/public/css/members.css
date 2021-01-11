@@ -1,0 +1,66 @@
+:root{
+    --background: #d4d3d32a;
+    --content: #ffffffda;
+    --border: 1px solid gray;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    margin: 0 auto;
+    padding: 15px;
+    width: 1170px;
+    gap: 50px;
+    background-color: var(--background);
+    border-radius: 5px;
+}
+
+.member {
+    background-color: var(--background);
+    border: var(--border);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.member p, .member h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.member .info {
+    margin-top: 15px;
+    background-color: var(--content);
+    border: var(--border);
+    border-radius: 5px;
+}
+
+.member img {
+    min-width: 184px;
+    max-width: 184px;
+    border-radius: 5px;
+    border: 1px transparent solid;
+}
+
+.member .controls {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+.member form {
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.member form:first-child {
+    margin-left: 1px;
+}
+
+.member form button, .member form select {
+    border-radius: 5px;
+    border: var(--border);
+}

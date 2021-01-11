@@ -8,51 +8,42 @@
 
     <%- include('../partials/head.ejs') %>
 
-        <link rel="stylesheet" href="/css/login-register.css">
+        <link rel="stylesheet" href="/css/members.css">
 </head>
 
 <body>
 
     <%- include('../partials/navigation.ejs') %>
 
-    <div class="container">
-        <div class="container col-10 col-md-6">
-            <% users.forEach(u=> { %>
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title"><span class="fa fa-user">Local</span></h3>
-    
-                        <p>
-                            <strong>id</strong>: <%= u.id %> </br>
-                                <strong>username</strong>: <%= u.local.username %> </br>
-                                    <% if(user !=null && user.role=='ADMIN' ) { %> <strong>password</strong>: <%=
-                                            u.local.password %> </br>
-                                            <% } %>
-                                                <strong>rol</strong>: <%= u.role %> </br>
-                        </p>
-    
-                        <% if(user !=null && user.role=='ADMIN') { %>
-                            <form action="/members/rank/<%= u.id %>" method="POST">
-                                <select id="rol" name="rol">
-    
-                                    <% Object.entries(roles.values).forEach(entry=> { const [key, value] = entry; %>
-    
-                                        <option value=<%= value %> ><%= value %>
-                                        </option>
-    
-                                        <% }) %>
-                                </select>
-    
-                                <button type="submit">Update</button>
-                            </form>
-                            <form action="/members/<%= u.id %>?_method=DELETE" method="POST">
-                                <button type="submit">Delete</button>
-                            </form>
-                            <% } %>
-                    </div>
+
+    <section>
+
+        <% users.forEach(u=> { %>
+            <div class="member">
+                <img src="/img/avatar.jpg" alt="avatar">
+                <div class="info">
+                    <h3><%= u.local.username %></h3>
+                    <p><%= u.role %></p>
                 </div>
-                <% }) %>
-        </div>
-    </div>
+
+                <% if(user !=null && user.role=='ADMIN') { %>
+                    <div class="controls">
+                        <form action="/members/rank/<%= u.id %>" method="POST">
+                            <select id="rol" name="rol">
+                                <% Object.entries(roles.values).forEach(entry=> { const [key, value] = entry; %>
+                                    <option value=<%= value %> ><%= value %></option>
+                                <% }) %>
+                            </select>
+        
+                            <button type="submit">Update</button>
+                        </form>
+                        <form action="/members/<%= u.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </section>
 </body>
 </html>
