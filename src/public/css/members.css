@@ -30,6 +30,11 @@ section {
     text-align: center;
 }
 
+.member a {
+    text-decoration: none;
+    color: black;
+}
+
 .member .info {
     margin-top: 15px;
     background-color: var(--content);
@@ -40,6 +45,8 @@ section {
 .member img {
     min-width: 184px;
     max-width: 184px;
+    min-height: 184px;
+    max-height: 184px;
     border-radius: 5px;
     border: 1px transparent solid;
 }

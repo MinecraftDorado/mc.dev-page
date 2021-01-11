@@ -7,8 +7,7 @@
     <title>Profile</title>
 
     <%- include('../partials/head.ejs') %>
-
-        <link rel="stylesheet" href="/css/members.css">
+    <link rel="stylesheet" href="/css/members.css">
 </head>
 
 <body>
@@ -17,31 +16,32 @@
 
 
     <section>
-
         <% users.forEach(u=> { %>
             <div class="member">
-                <img src="/img/avatar.jpg" alt="avatar">
-                <div class="info">
-                    <h3><%= u.local.username %></h3>
-                    <p><%= u.role %></p>
-                </div>
-
-                <% if(user !=null && user.role=='ADMIN') { %>
-                    <div class="controls">
-                        <form action="/members/rank/<%= u.id %>" method="POST">
-                            <select id="rol" name="rol">
-                                <% Object.entries(roles.values).forEach(entry=> { const [key, value] = entry; %>
-                                    <option value=<%= value %> ><%= value %></option>
-                                <% }) %>
-                            </select>
-        
-                            <button type="submit">Update</button>
-                        </form>
-                        <form action="/members/<%= u.id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete</button>
-                        </form>
-                    <% } %>
-                </div>
+                <a href="members/<%= u.local.username %>">
+                    <img src="<%= u.avatar %> " alt="avatar">
+                    <div class="info">
+                        <h3><%= u.local.username %></h3>
+                        <p><%= u.role %></p>
+                    </div>
+    
+                    <% if(user !=null && user.role=='ADMIN') { %>
+                        <div class="controls">
+                            <form action="/members/rank/<%= u.id %>" method="POST">
+                                <select id="rol" name="rol">
+                                    <% Object.entries(roles.values).forEach(entry=> { const [key, value] = entry; %>
+                                        <option value=<%= value %> ><%= value %></option>
+                                    <% }) %>
+                                </select>
+            
+                                <button type="submit">Update</button>
+                            </form>
+                            <form action="/members/<%= u.id %>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </a>
             </div>
         <% }) %>
     </section>

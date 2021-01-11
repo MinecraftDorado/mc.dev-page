@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title><%= member.local.username %> </title>
     
     <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/profile.css">
@@ -13,11 +13,11 @@
     <%- include('../partials/navigation.ejs') %>
 
     <section id="profile">
-        <img src="/img/avatar.jpg" alt="avatar" id="avatar">
+        <img src="<%= member.avatar %> " alt="avatar" id="avatar">
         <p id="lore">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia dicta eaque, fugit quibusdam non, est suscipit minus atque voluptatem rerum qui, ipsa labore similique porro hic nisi eos cupiditate doloribus!</p>
         <div id="user">
-            <p id="username"><%= user.local.username %></p>
-            <p id="role"><%= user.role %></p>
+            <p id="username"><%= member.local.username %></p>
+            <p id="role"><%= member.role %></p>
         </div>
         <div id="activity">
             <h1>Activity</h1>
@@ -30,9 +30,16 @@
         </div>
         <div id="info">
             <ul>
-                <li>Joined: <i><%= user.createdAt.toLocaleDateString() %></i></li>
+                <li>Joined: <i><%= member.createdAt.toLocaleDateString() %></i></li>
                 <li>Posts: 0</li>
             </ul>
+            <% if(user != null && member.id == user.id) { %>
+                <form action="/members/update_avatar" enctype="multipart/form-data" method="POST">
+                    <label for="newAvatar">Change avatar</label>
+                    <input type="file" id="newAvatar" name="newAvatar" accept="image/*" style="display: none">
+                    <input type="submit" value="Update">
+                  </form>
+            <% } %>
         </div>
     </section>
 </body>

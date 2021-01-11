@@ -27,6 +27,7 @@
     grid-area: avatar;
     min-width: 184px;
     max-width: 184px;
+    height: 184px;
     border: var(--border);
 }
 
@@ -81,6 +82,16 @@
     background-color: var(--content);
     list-style: none;
     padding: 5px 10px;
+}
+
+#info form input, #info form label {
+    border: var(--border);
+    border-radius: 5px;
+    background-color: var(--content);
+}
+
+#info form label:hover {
+    cursor: pointer;
 }
 
 /*
