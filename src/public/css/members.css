@@ -64,3 +64,13 @@ section {
     border-radius: 5px;
     border: var(--border);
 }
+
+/*
+  Responsive
+*/
+
+@media all and (max-width: 1200px){
+    section {
+        max-width: 95vw;
+    }
+}
