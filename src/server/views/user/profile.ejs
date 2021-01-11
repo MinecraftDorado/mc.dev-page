@@ -6,38 +6,34 @@
     <title>Profile</title>
     
     <%- include('../partials/head.ejs') %>
-    
-    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
 
     <%- include('../partials/navigation.ejs') %>
 
-    <div class="container">
-        <header class="text-center">
-            <h1>Profile</h1>
-            <a href="/logout" class="btn btn-light btn-sm">logout</a>
-        </header>
-
-        <hr>
-
-        <div class="container">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title"><span class="fa fa-user">Local</span></h3>
-
-                        <p>
-                            <strong>id</strong>: <%= user.id %> </br>
-                            <strong>username</strong>: <%= user.local.username %> </br>
-                            <strong>password</strong>: <%= user.local.password %> </br>
-                            <strong>rol</strong>: <%= user.role %> </br>
-                        </p>
-                        <a href="/logout" class="btn btn-light">logout</a>
-                    </div>
-                </div>
-            </div>
+    <section id="profile">
+        <img src="/img/avatar.jpg" alt="avatar" id="avatar">
+        <p id="lore">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia dicta eaque, fugit quibusdam non, est suscipit minus atque voluptatem rerum qui, ipsa labore similique porro hic nisi eos cupiditate doloribus!</p>
+        <div id="user">
+            <p id="username"><%= user.local.username %></p>
+            <p id="role"><%= user.role %></p>
         </div>
-    </div>    
+        <div id="activity">
+            <h1>Activity</h1>
+            <ul>
+                <li><h6>Lorem ipsum dolor sit amet consectetur.</h6><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, sed sunt beatae debitis aperiam et!</p><i>(xx - time) ago</i></li>
+                <li><h6>Lorem ipsum dolor sit amet consectetur.</h6><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, sed sunt beatae debitis aperiam et!</p><i>(xx - time) ago</i></li>
+                <li><h6>Lorem ipsum dolor sit amet consectetur.</h6><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, sed sunt beatae debitis aperiam et!</p><i>(xx - time) ago</i></li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </div>
+        <div id="info">
+            <ul>
+                <li>Joined: <i><%= user.createdAt.toLocaleDateString() %></i></li>
+                <li>Posts: 0</li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
