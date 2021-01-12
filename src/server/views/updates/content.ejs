@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('.././partials/head.ejs') %>
 
-    <link rel="stylesheet" href="/css/content-page.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="/css/content-page.css" />
     
     <script type="text/javascript" src="/js/spoiler.js"></script>
     <title><%- update.title %></title>
@@ -15,8 +15,7 @@
     <%- include('.././partials/navigation.ejs') %>
     <%- include('.././partials/header.ejs') %>
 
-    <div class="col_border"><a>.</a></div>
-    <div class="col_center">
+    <section>
         <a href="/">« All posts</a>
         <% if(user != null && user.role == 'ADMIN') { %>
             <a href="/update/edit/<%= update.id %>" id="edit">Edit</a>
@@ -25,11 +24,12 @@
             <a id="date"><%= update.createdAt.toLocaleDateString() %></a>
             
             <h2><%- update.title %></h2>
-
+    
             <div>
             <%- update.sanitizedHtml %>
             </div>
         </div>
+    </section>
     </div>
 </body>
 </html>

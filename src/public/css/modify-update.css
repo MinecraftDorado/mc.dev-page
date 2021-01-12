@@ -2,7 +2,11 @@
     box-shadow: 0 5px 8px 0 #00000033, 0 9px 26px 0 #00000030;
     background-color: white;
     border-radius: 10px;
-    padding: 2% 20px 5% 20px;
+    padding: 30px 20px 80px 20px;
+}
+
+.form h1 {
+    margin-bottom: 10px;
 }
 
 .form .submit {
@@ -19,6 +23,10 @@
     padding: 1.5%;
     border: none;
     font: 400 13.3333px Arial;
+}
+
+.form #title {
+    margin-top: 0;
 }
 
 .form-group {
@@ -72,3 +80,23 @@ section {
         max-width: 85vw;
     }
 }
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: white;
+}
+
+.btn-primary {background-color:#0d6efd;}
+.btn-secondary {background-color: #6c757d;}

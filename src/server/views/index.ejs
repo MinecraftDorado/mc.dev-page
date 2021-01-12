@@ -14,9 +14,7 @@
 
     <%- include('partials/header.ejs') %>
 
-    <div class="col_border"><a>.</a></div>
-    <div class="col_center">
-
+    <section>
         <% updates.forEach(update => { %>
             <div class="content">
                 <img src="img/img.png" alt="img">
@@ -24,7 +22,7 @@
                     <h2><%= update.title %></h2>
                     <a class="content-desc" href="update/<%= update.slug %>"><%= update.description %></a>
                     <p><%= update.createdAt.toLocaleDateString() %></p>
-
+    
                     <% if(user != null && user.role == 'ADMIN') { %> 
                         <div class='settings'>
                             <a href="update/edit/<%= update.id %>">Edit</a>
@@ -36,6 +34,6 @@
                 </div>
             </div>
         <% }) %>
-    </div>
+    </section>
 </body>
 </html>

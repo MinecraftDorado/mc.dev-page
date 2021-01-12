@@ -9,13 +9,10 @@ section {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
-    margin: 0 auto;
-    padding: 15px;
-    width: 1170px;
     gap: 50px;
+    
     background-color: var(--background);
-    border-radius: 5px;
+    margin-top: 50px;
 }
 
 .member {
@@ -70,6 +67,7 @@ section {
 .member form button, .member form select {
     border-radius: 5px;
     border: var(--border);
+    padding: 2px 5px;
 }
 
 /*
@@ -78,6 +76,6 @@ section {
 
 @media all and (max-width: 1200px){
     section {
-        max-width: 95vw;
+        max-width: 90vw;
     }
 }

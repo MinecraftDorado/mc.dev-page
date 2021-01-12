@@ -1,16 +1,16 @@
-.col_center {
+section {
     background-color: #d4d3d32a;
     display: block;
 }
 
-.col_center a, #date {
+section a, #date {
     color: white;
     text-decoration: none;
     margin: 15px 0 0 15px;
     display: inline-block;
 }
 
-.col_center #edit {
+section #edit {
     float: right;
     margin: 15px 25px 0 0;
 }

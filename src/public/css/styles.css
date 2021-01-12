@@ -34,17 +34,9 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 
-.col_border {
-    width: 25vw;
-    float: left;
-    overflow: hidden;
-    content: '';
-    opacity: 0;
-}
-
-.col_center {
-    float: left;
+section {
     display: grid;
+    background: none;
 }
 
 .content {
@@ -123,29 +115,23 @@ body::-webkit-scrollbar {
     src: url("/fonts/TUZyzwprpvBS1izr_vOECuSf.woff2");
 }
 
+/*
+  Responsive
+*/
+
 @media only screen and (max-width: 900px){
 
     #title h2 {
         padding: 25px 2px;
     }
 
-    .col_border {
-        display: none;
-    }
-
-    .col_center {
-        width: 100vw;
-    }
-
     .content {
-        border-left: none;
-        border-right: none;
         margin: 5px 0px;
     }
     
     .content img {
         margin-right: 0;
-        width: 100vw;
+        width: 100%;
     }
 
     .content h2 {
@@ -165,10 +151,6 @@ body::-webkit-scrollbar {
 
     #title h2 {
         padding: 25px 0;
-    }
-
-    .col_center {
-        width: 50vw;
     }
 
     .content {

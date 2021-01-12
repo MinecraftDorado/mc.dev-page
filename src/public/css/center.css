@@ -1,0 +1,16 @@
+section {
+    margin: 0 auto;
+    padding: 15px;
+    width: 1170px;
+    border-radius: 5px;
+}
+
+/*
+  Responsive
+*/
+
+@media all and (max-width: 1200px){
+    section {
+        max-width: 90vw;
+    }
+}
