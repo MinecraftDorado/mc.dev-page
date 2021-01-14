@@ -48,6 +48,7 @@ require('./routes/index')(app)
 require('./routes/login')(app, passport)
 require('./routes/updates')(app)
 require('./routes/members')(app)
+require('./routes/wikis')(app)
 
 
 //=====================

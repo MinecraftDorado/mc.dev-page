@@ -1,0 +1,173 @@
+section {
+    background-color: #d4d3d32a;
+    display: block;
+}
+#index img, #slots img, #custom_name img, #statistics img, #perks img {
+    margin-top: 15px;
+    float: right;
+}
+#index ul {
+    margin-top: 50px;
+    background-color: #F8F9FA;
+    border: 1px solid #686868;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    width: 12%;
+    font-size: 14px;
+    list-style: none
+}
+#index li {
+    margin-bottom: 5px;
+}
+#index li a {
+    text-decoration: none;
+}
+
+.content h3, .content h4 {
+    color: #ffffff;
+    background: none;
+    font-weight: normal;
+    margin: 0;
+    padding-top: .5em;
+    padding-bottom: .17em;
+    border-bottom: 1px solid #aaa;
+    clear: both;
+    font-size: 1.5rem;
+}
+
+#commands ul, #permissions ul, #statistics ul, #perks ul {
+    margin: 15px 0 0 50px;
+}
+#commands li code {
+    margin-right: 0;
+}
+#commands li i, #perks li i {
+    display: unset;
+    margin: 0;
+    padding: 0;
+}
+info {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
+.content {
+    display: block;
+}
+
+.content h2 {
+    color: white;
+    font: normal normal normal 28px/35px "title",cursive;
+    padding: 25px 35px 25px 15px;
+    text-align: left;
+}
+
+.content p {
+    color: white;
+    padding: 15px 15px;
+    font-family: "desc";
+    word-break: break-word;
+    vertical-align: baseline;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.content a {
+    color: #61abff;
+}
+
+.content i, desc {
+    font-family: "desc italic";
+    color: white;
+    display: grid;
+    padding: 0 15px;
+    margin: 15px 0;
+}
+
+.content p i {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+#date {
+    float: right;
+    font-style: italic;
+    font-family: "desc";
+}
+
+desc {
+    border-left: solid #0180ca 2px;
+    margin: 15px 15px;
+    font-size: 25px;
+    padding: 10px 15px;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 10px;
+    margin: 15px 15px;
+}
+
+code {
+    background-color: white;
+    color: black;
+    padding: 2px 2.5px;
+    margin: 15px 15px;
+}
+
+.content p code {
+    margin: 0;
+}
+
+.content p code i {
+    color: black;
+    font: inherit;
+    font-style: italic;
+}
+
+.spoiler {
+    background-color: #D9D9D9;
+    color: #535353;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 3px #999;
+    padding: 4px;
+    margin-bottom: 10px;
+    margin: 15px 15px 0;
+}
+
+@media only screen and (max-width: 900px){
+
+    .content {
+        display: block;
+        margin: 20px 0 5px;
+        border-left: none;
+        border-right: none;
+        padding: 0 5px 15px;
+    }
+
+    .content img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 900px){
+
+    .content {
+        display: block;
+        margin: 20px 15px;
+        border: 1px #b4b4b4 solid;
+        padding: 0 75px 15px;
+    }
+
+    .content img {
+        width: 45%;
+    }
+}
