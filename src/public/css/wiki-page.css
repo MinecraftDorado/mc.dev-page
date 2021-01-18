@@ -39,10 +39,10 @@ section {
 #commands ul, #permissions ul, #statistics ul, #perks ul {
     margin: 15px 0 0 50px;
 }
-#commands li code {
+#commands li code, #permissions li code {
     margin-right: 0;
 }
-#commands li i, #perks li i {
+#commands li i, #perks li i, #permissions li i {
     display: unset;
     margin: 0;
     padding: 0;
