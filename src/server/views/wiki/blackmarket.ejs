@@ -75,6 +75,10 @@
                     <h4>Menus</h4>
                     <img src="/img/blackmarket/storage.png"></img>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum perspiciatis, consectetur nesciunt nisi cum necessitatibus.</p>
+                    <div style="float: left;">
+                        <img src="/img/blackmarket/market.png" style="float: left;"></img>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+                    </div>
                 </div>
                 <div id="npc">
                     <h4>NPC</h4>
@@ -84,10 +88,38 @@
                 <div id="config">
                     <h4>Config</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minima nemo libero facilis asperiores. Ut.</p>
+
+                    <button type="button" onclick="show('config_spoiler')" class="spoiler">config.yml</button>
+
+                    <pre><code id="config_spoiler" style="display: none;">
+name: Present Chester
+material: CYAN_SHULKER_BOX
+max_health: 200
+fire_resistance: true
+speed: 1.1
+item_finder_ratio: 5
+resistance:
+all: 25
+explosion: 0
+</code></pre>
                 </div>
                 <div id="languages">
                     <h4>Languages</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minima nemo libero facilis asperiores. Ut.</p>
+
+                    <button type="button" onclick="show('lang_spoiler')" class="spoiler">example.yml</button>
+
+                    <pre><code id="lang_spoiler" style="display: none;">
+name: Present Chester
+material: CYAN_SHULKER_BOX
+max_health: 200
+fire_resistance: true
+speed: 1.1
+item_finder_ratio: 5
+resistance:
+all: 25
+explosion: 0
+</code></pre>
                 </div>
             </div>
         </section>

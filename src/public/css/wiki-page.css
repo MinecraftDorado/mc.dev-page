@@ -2,7 +2,7 @@ section {
     background-color: #d4d3d32a;
     display: block;
 }
-#index img, #slots img, #custom_name img, #statistics img, #perks img {
+#index img, #slots img, #custom_name img, #statistics img, #perks img, #menus img {
     margin-top: 15px;
     float: right;
 }
